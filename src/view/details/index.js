@@ -16,7 +16,6 @@ import { ContainerSearch, Search, SearchIcon, InputSearch, } from '../../view/ho
 const Details = (props) => {
   const { pokemonName } = props
   const dispatch = useDispatch()
-  const [searchText, setSearchText] = useState('')
 
   const callPokemon = useCallback(() => {
     dispatch(getByPokemon(pokemonName))
@@ -26,7 +25,10 @@ const Details = (props) => {
     callPokemon()
   }, [callPokemon])
 
+  const [searchText, setSearchText] = useState('')
+
   const pokemonState = useSelector(state => state.pokemon.data) || []
+  const pokemonStats = useSelector(state => state.pokemon.data.stats) || ''
 
   return (
     <>
@@ -92,17 +94,18 @@ const Details = (props) => {
           <Status>
             <Title>Status</Title>
             <div className='text-center'>HP</div>
-            <Progress value={pokemonState.stats[0].base_stat} max='200' />
+            {console.log(pokemonState)}
+            <Progress value={pokemonStats[0]?.base_stat} max='200' />
             <div className='text-center'>attack</div>
-            <Progress value={pokemonState.stats[1].base_stat} max='200' />
+            <Progress value={pokemonStats[1]?.base_stat} max='200' />
             <div className='text-center'>defense</div>
-            <Progress value={pokemonState.stats[2].base_stat} max='200' />
+            <Progress value={pokemonStats[2]?.base_stat} max='200' />
             <div className='text-center'>special-attack</div>
-            <Progress value={pokemonState.stats[3].base_stat} max='200' />
+            <Progress value={pokemonStats[3]?.base_stat} max='200' />
             <div className='text-center'>special-defense</div>
-            <Progress value={pokemonState.stats[4].base_stat} max='200' />
+            <Progress value={pokemonStats[4]?.base_stat} max='200' />
             <div className='text-center'>speed</div>
-            <Progress value={pokemonState.stats[5].base_stat} max='200' />
+            <Progress value={pokemonStats[5]?.base_stat} max='200' />
           </Status>
         </GrandCard>
       </Container>

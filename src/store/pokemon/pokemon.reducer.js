@@ -3,7 +3,7 @@ import TYPES from '../types'
 const INITIAL_STATE = {
   loading: false,
   all: [],
-  errorMsg: ''
+  errorMsg: '',
 }
 
 const reducer = (state = INITIAL_STATE, action) => {

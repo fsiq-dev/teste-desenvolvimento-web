@@ -6,7 +6,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
-min-height: 100%;
+background-color: #fff;
 `
 // SEARCH BAR
 export const ContainerSearch = styled.div`
@@ -53,19 +53,13 @@ padding: 10px;
 export const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows:   auto;
+  grid-template-rows: auto;
   height: 100%;
   width: 100%;
   @media only screen and (max-width: 978px) {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
   }
-`
-export const ButtonContainer = styled.div`
-width: 100%;
-display: flex;
-justify-content: center;
-align-items: center;
-padding: 20px;
 `

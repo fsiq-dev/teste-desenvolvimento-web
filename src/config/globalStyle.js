@@ -14,6 +14,14 @@ const GlobalStyle = createGlobalStyle`
         flex-direction:column;
         height: 100vh;
     }
+    .pagination {
+      width: 500px;
+      display: flex;
+      margin: auto;
+      list-style: none;
+      justify-content: space-between;
+      padding: 25px;
+    }
 `
 
 export default GlobalStyle

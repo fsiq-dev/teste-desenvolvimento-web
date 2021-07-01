@@ -6,7 +6,7 @@ export const getAll = (page) => {
   return async (dispatch) => {
     dispatch({ type: TYPES.POKEMON_LOADING, status: true })
     try {
-      const perPage = 20
+      const perPage = 250
       const offset = (page * perPage) - perPage
       const result = await getPokemon(perPage, offset)
       dispatch({ type: TYPES.POKEMON_ALL, data: result.data })

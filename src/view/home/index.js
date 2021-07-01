@@ -6,6 +6,7 @@ import {
   Grid,
 } from './styled'
 import { navigate } from '@reach/router'
+import ReactPaginate from 'react-paginate'
 
 import Card from '../../components/card'
 
@@ -13,10 +14,10 @@ const Home = (props) => {
   const dispatch = useDispatch()
 
   const pokemons = useSelector(state => state.pokedex.all.results) || []
+  const pokemonsCount = useSelector(state => state.pokedex.all.count)
   const Loading = useSelector(state => state.pokedex.loading)
 
   const [searchText, setSearchText] = useState('')
-
   const callPokemon = useCallback((page = 1) => {
     dispatch(getAll(page))
   }, [dispatch])
@@ -24,6 +25,10 @@ const Home = (props) => {
   useEffect(() => {
     callPokemon()
   }, [callPokemon])
+
+  const HandleChangePage = (page) => {
+    dispatch(getAll(page))
+  }
 
   const getPokemons = () => {
     if (searchText === '') {
@@ -34,7 +39,7 @@ const Home = (props) => {
 
   useEffect(() => {
     getByPokemon()
-  }, [searchText.length, getByPokemon])
+  }, [searchText.length])
 
   return (
     <>
@@ -58,6 +63,13 @@ const Home = (props) => {
                 return <Card key={k} data={data} />
               })}
           </Grid>
+          <ReactPaginate
+            pageCount={Math.ceil(pokemonsCount / 250)}
+            pageRangeDisplayed={2}
+            marginPagesDisplayed={1}
+            onPageChange={(data) => HandleChangePage(data.selected + 1)}
+            containerClassName='pagination'
+          />
         </div>
       </Main>
     </>
