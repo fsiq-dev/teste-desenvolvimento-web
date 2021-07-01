@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 import { BiSearchAlt } from 'react-icons/bi'
 
-export const Container = styled.div`
+// SEARCH BAR
+export const ContainerSearch = styled.div`
 width: 100%;
 display: flex;
 justify-content: center;
@@ -10,7 +11,6 @@ margin-left: auto;
 margin-right: auto;
 `
 
-// SEARCH BAR
 export const Search = styled.div`
 display: flex;
 
@@ -23,10 +23,24 @@ position: relative;
 right: 35px;
 top: 10px;
 `
-
 export const InputSearch = styled.input`
 width: 100%;
 height: 40px;
 border: 1px solid rgba(0, 0, 0, 0.4);
 border-radius: 4px;
+`
+
+// GRID
+
+export const Grid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows:   auto;
+  height: 100%;
+  width: 100%;
+  @media only screen and (max-width: 978px) {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
 `
