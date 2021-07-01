@@ -7,10 +7,10 @@ A missão é criar um sistema para substituir este excel, pois queremos expandir
 Fique à vontade com o layout, precisamos de uma interface que consiga entregar as funcionalidades principais e substituir o excel, só isso.
 
 # PASSO A PASSO
-* [ ] fazer clone deste repositorio
-* [ ] Apos instalar as dependências
-    * [ ] crie um arquivo .env na raiz do projeto
-    * [ ] coloque a variável de ambiente como está no .end-public
+* [ ] Fazer clone deste repositorio
+* [ ] Instalar as dependências
+    * [ ] Crie um arquivo .env na raiz do projeto
+    * [ ] Coloque a variável de ambiente como está no .end-public
 * [ ] Iniciar o servidor
 
 ```console
