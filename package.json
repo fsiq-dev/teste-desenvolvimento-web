@@ -1,0 +1,22 @@
+{
+  "name": "pokedex-redFox",
+  "version": "0.0.1",
+  "main": "server.js",
+  "repository": "https://github.com/fsiq-dev/teste-desenvolvimento-web.git",
+  "author": "Felipe <felipe.msiqueira@al.infnet.edu.br>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./src/server.js",
+    "dev": "nodemon --watch src server.js"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.937.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.0",
+    "multer": "^1.4.2",
+    "multer-s3": "^2.9.0",
+    "nodemon": "^2.0.9"
+  }
+}
