@@ -18,6 +18,7 @@ const Home = (props) => {
   const Loading = useSelector(state => state.pokedex.loading)
 
   const [searchText, setSearchText] = useState('')
+
   const callPokemon = useCallback((page = 1) => {
     dispatch(getAll(page))
   }, [dispatch])
@@ -55,16 +56,11 @@ const Home = (props) => {
             {Loading
               ? <p>Loading...</p>
               : getPokemons().map((item, k) => {
-                const data = {
-                  name: item.name,
-                  id: k + 1,
-                  image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${k + 1}.png`
-                }
-                return <Card key={k} data={data} />
+                return <Card key={k} data={item} />
               })}
           </Grid>
           <ReactPaginate
-            pageCount={Math.ceil(pokemonsCount / 250)}
+            pageCount={Math.ceil(pokemonsCount / 100)}
             pageRangeDisplayed={2}
             marginPagesDisplayed={1}
             onPageChange={(data) => HandleChangePage(data.selected + 1)}

@@ -94,7 +94,6 @@ const Details = (props) => {
           <Status>
             <Title>Status</Title>
             <div className='text-center'>HP</div>
-            {console.log(pokemonState)}
             <Progress value={pokemonStats[0]?.base_stat} max='200' />
             <div className='text-center'>attack</div>
             <Progress value={pokemonStats[1]?.base_stat} max='200' />
