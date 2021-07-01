@@ -4,9 +4,11 @@ import thunk from 'redux-thunk'
 
 // importação dos reducers
 import pokemonReducer from './pokemon/pokemon.reducer'
+import pokemonMultipeReducer from './pokemon/pokemonMultiple.reducer'
 
 const reducers = combineReducers({
   pokedex: pokemonReducer,
+  pokemon: pokemonMultipeReducer
 })
 
 // middlewares de redux

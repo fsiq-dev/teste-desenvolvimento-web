@@ -2,12 +2,18 @@ import { Router } from '@reach/router'
 
 import Layout from '../components/layout'
 import Home from './home'
+import Details from './details'
 
 const Menu = [
   {
     route: '/',
     component: Home
+  },
+  {
+    route: '/pokemon/:pokemonName',
+    component: Details
   }
+
 ]
 
 const Index = (props) => {

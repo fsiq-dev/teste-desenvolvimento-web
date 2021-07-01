@@ -15,4 +15,5 @@ background-color: #9D3236;
 export const Logo = styled.img`
 width: 250px;
 height: auto;
+cursor: pointer;
 `
