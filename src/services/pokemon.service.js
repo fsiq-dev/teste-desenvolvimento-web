@@ -52,7 +52,16 @@ const getAllPokemon = async () => {
     })
 }
 
+const getPokemonById = async (id) => {
+    const pokemonDB = await Pokemon.findById(id)
+    if(pokemonDB) {
+        return pokemonDB
+    }
+    return; 
+}
+
 module.exports = {
     addNewPokemonOnPokedex,
     getAllPokemon,
+    getPokemonById
 }

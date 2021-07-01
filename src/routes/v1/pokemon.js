@@ -1,4 +1,4 @@
-const { createNewPokemon, listAllPokemon} = require('../../controllers/pokemon.controller');
+const { createNewPokemon, listAllPokemon, listPokemonById} = require('../../controllers/pokemon.controller');
 const multer = require('multer');
 const multerConfig = require('../../config/multer')
 
@@ -14,7 +14,5 @@ module.exports = (Router) => {
         )
     Router
         .route('/pokemon/:id')
-        .get((req, res) => {
-            res.send('rota get por id')
-        })
+        .get(listPokemonById)
 }

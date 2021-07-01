@@ -1,4 +1,4 @@
-const { addNewPokemonOnPokedex, getAllPokemon } = require('../services/pokemon.service')
+const { addNewPokemonOnPokedex, getAllPokemon, getPokemonById } = require('../services/pokemon.service')
 
 const createNewPokemon = async (req, res, next) => {
     const { body, file } = req
@@ -14,8 +14,22 @@ const listAllPokemon = async (req, res, next) => {
     res.status(200).send({ data: result })
 }
 
+const listPokemonById = async (req, res, next) => {
+    const { id } = req.params
+    const result = await getPokemonById(id)
+    if(!result) {
+        return res.status(404).send({
+            details: [
+                "pokemon informado não existe"
+            ]
+        })
+    }
+    return res.status(200).send(result)
+}
+
 
 module.exports = {
     createNewPokemon,
-    listAllPokemon
+    listAllPokemon,
+    listPokemonById
 }
